@@ -1,21 +1,21 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://api.thecatapi.com/v1';
+axios.defaults.baseURL = 'https://api.thedogapi.com/v1';
+
 axios.defaults.headers.common['x-api-key'] =
-  'live_IyKwMeuxrKM06lE6boidtlFYoSn0qupl';
+  'live_NwvpvYwRpl5OnS2uqOCBBnLgtjvdaSmzFfLn1jguXPtgoDLCbGJxoeZhti9ZCSvm';
 
 export const fetchBreeds = async () => {
-    const response = await axios.get('/breeds');
+  const response = await axios.get('/breeds');
 
-    return response.data;
+  return response.data;
 };
 
-
 export const fetchDogByBreed = async breedId => {
-    const response = await axios.get('/images/search', {
-        params: {
-            breed_id: breedId,
-        },
-    });
-    return response.data[0];
-}
+  const response = await axios.get('/images/search', {
+    params: {
+      breed_id: breedId
+    }
+  });
+  return response.data[0];
+};
